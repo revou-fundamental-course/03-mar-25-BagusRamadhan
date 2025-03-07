@@ -1,1 +1,57 @@
-/* Ini File CSS */
+/* Ini file css */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-logo {
+  height: 50px;
+  width: 50px;
+  background-image: url(https://picsum.photos/200);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+}
+
+nav > a {
+  padding: 8px;
+  border: 1px solid;
+  text-decoration: none;
+  color: black;
+}
+
+.banner-img {
+  border: 1px solid;
+  height: 500px;
+}
+
+.our-profile-content {
+  border: 1px solid;
+  height: 500px;
+  align-content: center;
+  text-align: center;
+}
+
+.achievement-content {
+  border: 1px solid;
+  height: 500px;
+  align-content: center;
+  text-align: center;
+}
+
+.message-us-content {
+  border: 1px solid;
+  height: 500px;
+  align-content: center;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
