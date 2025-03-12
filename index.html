@@ -5,10 +5,9 @@
     <meta charset="UTF-8" />
     <!-- Agar Responsif -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Bagus</title>
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <title>Portfolio Bagus</title>
   </head>
 
   <body>
@@ -18,7 +17,7 @@
       <div class="main-logo"></div>
 
       <!-- Navigation Bar -->
-      <nav>
+      <nav aria-label="Main Navigation">
         <a href="#home">Home</a>
         <a href="#our-profile">Our Profile</a>
         <a href="#achievement">Achievement</a>
@@ -34,12 +33,22 @@
       <!-- Home Content -->
       <section id="home">
         <header>
-          <h1>Hi User, Welcome to my Portfolio</h1>
+          <h1>Hi <span id="name">"..."</span>, Welcome to my Portfolio</h1>
           <p>Here you can see my profile, achievement, and message me</p>
         </header>
 
         <!-- Banner Autoslide -->
-        <div class="banner-img"></div>
+        <div class="banner-img">
+          <img class="img-slide" src="asset/gambar1.jpg" />
+          <img class="img-slide" src="asset/gambar2.jpg" />
+          <img class="img-slide" src="asset/gambar3.jpg" />
+        </div>
+
+        <!-- Button Next and Previous -->
+        <div class="button-container">
+          <button onclick="plusDivs(-1)" class="btn-slide">Previous</button>
+          <button onclick="plusDivs(1)" class="btn-slide">Next</button>
+        </div>
       </section>
 
       <!-- Garis Pembatas -->
@@ -68,7 +77,7 @@
           <h1>Achievement</h1>
         </header>
 
-        <!-- achievement Content -->
+        <!-- Achievement Content -->
         <div class="achievement-content">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
@@ -79,27 +88,51 @@
         </div>
       </section>
 
-      <!-- Message Us Content -->
+      <!-- Message Content -->
       <section id="message-us">
-        <header>
-          <h1>Message Us</h1>
-        </header>
+        <h1>Message Us</h1>
 
-        <!-- Message Us Content -->
-        <div class="message-us-content">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-            placeat culpa esse? Quisquam commodi, itaque unde error adipisci
-            deleniti tempora possimus nihil culpa, dolorum vitae repudiandae
-            inventore et eaque natus?
-          </p>
+        <div class="form-wrapper">
+          <!-- Form Message -->
+          <section id="message-form" class="message-form">
+            <form name="message-form" onsubmit="return validateForm()">
+              Nama :
+              <input type="text" placeholder="Nama" name="full-name" /><br />
+
+              Tanggal Lahir : <input type="date" name="tgl-lahir" /><br />
+
+              Jenis Kelamin :
+              <input type="radio" id="male" name="gender" value="Laki-laki" />
+              <label for="male">Laki-laki</label>
+              <input type="radio" id="female" name="gender" value="Perempuan" />
+              <label for="female">Perempuan</label><br />
+
+              Pesan : <textarea name="messages" placeholder="Pesan"></textarea
+              ><br />
+
+              <input type="submit" value="Submit" />
+            </form>
+          </section>
+
+          <!-- Form Validation -->
+          <section class="form-validate">
+            <div class="validate-form">
+              <p>Nama : <span id="sender-full-name"></span></p>
+              <p>Tanggal Lahir : <span id="sender-birth-date"></span></p>
+              <p>Jenis Kelamin : <span id="sender-gender"></span></p>
+              <p>Pesan : <span id="sender-messages"></span></p>
+            </div>
+          </section>
         </div>
       </section>
     </main>
 
     <!-- Main Footer -->
     <footer>
-      <p>&copy; 2025 Portfolio Bagus</p>
+      <p>&copy; 2025 Portfolio Bagus | All Rights Reserved</p>
     </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
   </body>
 </html>
